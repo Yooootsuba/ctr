@@ -59,7 +59,7 @@ int main(int argc, char const * argv[]) {
         else if (strcmp("-b", argv[i]) == 0 || strcmp("--binary",      argv[i]) == 0 ||
                  strcmp("-o", argv[i]) == 0 || strcmp("--octal",       argv[i]) == 0 ||
                  strcmp("-d", argv[i]) == 0 || strcmp("--decimal",     argv[i]) == 0 ||
-                 strcmp("-h", argv[i]) == 0 || strcmp("--hexadecimal", argv[i]) == 0) {
+                 strcmp("-x", argv[i]) == 0 || strcmp("--hexadecimal", argv[i]) == 0) {
             base = argv[i];
             if (i + 1 < argc) {
                 number = argv[i + 1];
