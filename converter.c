@@ -27,6 +27,9 @@ void convert_to_ascii(unsigned long number) {
     if (number >= 32 && number <= 126) {
         printf("ASCII       : '%c' \n", number);
     }
+    else {
+        printf("ASCII       : Fail to matched \n");
+    }
 }
 
 
