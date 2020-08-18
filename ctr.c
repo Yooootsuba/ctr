@@ -3,9 +3,10 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <stdbool.h>
+#include "converter.h"
 
 
-void help() {
+void help_page() {
     printf("Usage: \n");
     printf("    ctr [-b | -o | -d | -x] [number] [options] \n\n");
 
@@ -37,15 +38,17 @@ void help() {
 
 
 int main(int argc, char const * argv[]) {
+    bool help = false;
     bool ascii = false;
     bool uppercase = false;
     char * base = NULL;
     char * number = NULL;
 
+    // Parse arguments
     for (size_t i = 1; i < argc; i++) {
         if (strcmp("-h", argv[i]) == 0 || strcmp("--help", argv[i]) == 0) {
-            help();
-            exit(0);
+            help = true;
+            break;
         }
         else if (strcmp("-a", argv[i]) == 0 || strcmp("--ascii", argv[i]) == 0) {
             ascii = true;
@@ -64,10 +67,27 @@ int main(int argc, char const * argv[]) {
         }
     }
 
-    if (number == NULL) {
-        help();
+    if (help == true || argc == 1) {
+        help_page();
     }
-
+    else if (number == NULL) {
+        printf("Invalid argument. See \"ctr --help\". \n");
+    }
+    else {
+        unsigned long ul_number = rebase(number, base);
+        if (ascii == true) {
+            convert_to_ascii(ul_number);
+        }
+        convert_to_binary(ul_number);
+        convert_to_octal(ul_number);
+        convert_to_decimal(ul_number);
+        if (uppercase == true) {
+            convert_to_hexadecimal_u(ul_number);
+        }
+        else {
+            convert_to_hexadecimal(ul_number);
+        }
+    }
 
     return 0;
 }
