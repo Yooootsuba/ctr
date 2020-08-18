@@ -7,8 +7,8 @@ void convert_to_ascii(unsigned long number);
 void convert_to_binary(unsigned long number);
 void convert_to_octal(unsigned long number);
 void convert_to_decimal(unsigned long number);
-void convert_to_octal(unsigned long number);
-void convert_to_octal_u(unsigned long number);
+void convert_to_hexadecimal(unsigned long number);
+void convert_to_hexadecimal_u(unsigned long number);
 
 
 #endif
