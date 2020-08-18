@@ -4,7 +4,7 @@ ctr is a number base converter in terminal
 
 ## Build
 
-To build ctr, run 'make' inside the directory where you have the source.
+To build ctr, run 'make' inside the directory where you have the source
 
 ```sh
 $ make
