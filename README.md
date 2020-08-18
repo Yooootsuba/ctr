@@ -4,6 +4,8 @@ ctr is a number base converter in terminal
 
 ## Build
 
+To build tetris, run 'make' inside the directory where you have the source.
+
 ```sh
 $ make
 ```
@@ -23,8 +25,6 @@ Octal       : 131
 Decimal     : 89
 Hexadecimal : 0x59
 ```
-
-The maximum input number is 18446744073709551615 in decimal .
 
 ## License
 
